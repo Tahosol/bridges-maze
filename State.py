@@ -5,3 +5,4 @@ class State(Enum):
   NorthBorder = 2
   SouthBorder = 3 
   Bridge = 4
+  No = 5
