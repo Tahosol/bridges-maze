@@ -1,21 +1,19 @@
 from Map import Pixel, empty_map
 from State import State
 
+#Shortest path finder
 class PathFinder:
+    #Constructor
+    #tabPixels: table of Pixels objects representing the map of the bridges over the river
     def __init__(self, tabPixels: list):
         self.tabPixels = tabPixels
         self.largeur = len(tabPixels)
         self.hauteur = len(tabPixels[self.largeur-1])
         print(self.largeur, self.hauteur)
 
-    def __minDistPx(self, nonvisites: set, distance: dict) -> tuple:
-        min = 2147483647
-        posMin = (-1,-1)
-        for p in nonvisites:
-            if (distance[p] < min):
-                posMin = p
-        return posMin
-
+    #Finds the shortest path from the start pixel to the end pixel
+    #debut: tuple representing the position of the start pixel, fin: tuple representing the position of the end pixel
+    #Returns a list of the pixels the path runs through
     def trouver_chemin(self, debut: tuple, fin: tuple) -> list:
         #tupple debut (y,x)
         #tupple fin (y,x)
@@ -68,7 +66,15 @@ class PathFinder:
         print(chemin)
 
         return chemin
-    
+
+    def __minDistPx(self, nonvisites: set, distance: dict) -> tuple:
+        min = 2147483647
+        posMin = (-1,-1)
+        for p in nonvisites:
+            if (distance[p] < min):
+                posMin = p
+        return posMin
+
 if __name__ == "__main__":
     tab = empty_map(10, 20)
     finder = PathFinder(tab)
