@@ -61,8 +61,12 @@ def empty_map(height: int, width: int) -> list[list[Pixel]]:
         for x in range(width):
             if y == 0:  
                 row.append(Pixel(property=State.State.Bridge, north=State.State.NorthBorder, x=x, y=y))
+            elif y == 1:
+                row.append(Pixel(property=State.State.Water, north=State.State.Bridge, x=x, y=y))
             elif y == height + 1: 
                 row.append(Pixel(property=State.State.Bridge, south=State.State.SouthBorder, x=x, y=y))
+            elif y == width -2:
+                row.append(Pixel(property=State.State.Water, south=State.State.Bridge, x=x, y=y))
             elif x == 0: 
                 row.append(Pixel(west=State.State.No, x=x, y=y))
             elif x == width - 1:

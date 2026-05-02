@@ -80,24 +80,7 @@ class PathFinder:
         return posMin
 
 if __name__ == "__main__":
-    #tab = empty_map(10, 20)
-
-    ok = False
-    while(not ok):
-        try:
-            test_map = init_map(10, 20)
-            for row in test_map:
-                for pixel in row:
-                    if pixel.property == State.Bridge:
-                        print('*', end='')
-                    else:
-                        print('=', end='')
-                print()
-            ok=True
-        except:
-            pass
-
-
-    finder = PathFinder(test_map)
+    tab = empty_map(10, 20)
+    finder = PathFinder(tab)
     chemin = finder.trouver_chemin((0,0),(12,0))
     print(chemin)
