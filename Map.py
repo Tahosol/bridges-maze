@@ -33,23 +33,19 @@ def empty_map(height: int, width: int):
     nord_line = []
     for i in range(width):
         if i == 0:
-            nord_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.SouthBorder, State.State.Bridge,State.State.Water))
+            nord_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.NordBorder, State.State.Bridge,State.State.Water))
         elif i == 49:
-            nord_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.SouthBorder, State.State.Water,State.State.Bridge))
+            nord_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.NordBorder, State.State.Water,State.State.Bridge))
         else :
-            nord_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.SouthBorder, State.State.Bridge,State.State.Bridge))
+            nord_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.NordBorder, State.State.Bridge,State.State.Bridge))
     the_map.append(nord_line)
     return the_map
 
-# def init_map(height: int, width: int):
-#     the_map = []
-#     for _ in range(height):
-#         j = []
-#         for _ in range(width):
-#             j.append(Pixel())
-#         the_map.append(j)
-#     for _ in range(random.randint(10, 15)):
-#         first_pixel = random.randint(50)
+def init_map(height: int, width: int):
+    the_map = empty_map(height, width)
+    
+
+
 if __name__ == "__main__":
     test_map = empty_map(50, 100)
     for i in test_map:
