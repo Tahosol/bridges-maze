@@ -78,5 +78,5 @@ class PathFinder:
 if __name__ == "__main__":
     tab = empty_map(10, 20)
     finder = PathFinder(tab)
-    #chemin = finder.trouver_chemin((0,0),(12,0))
-    #print(chemin)
+    chemin = finder.trouver_chemin((0,0),(12,0))
+    print(chemin)
