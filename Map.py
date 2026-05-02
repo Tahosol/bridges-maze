@@ -1,9 +1,9 @@
 import State
 
 class Pixel:
-    def __init__(self, property: str, ):
+    def __init__(self, property: State.State, nord: State.State, south: State.State, east: State.State, west: State.State):
         self.property = property
-        self.nord = State.NextTo
-        self.south= State.NextTo
-        self.east = State.NextTo
-        self.west = State.NextTo
+        self.nord = nord
+        self.south= south
+        self.east = east
+        self.west = west
